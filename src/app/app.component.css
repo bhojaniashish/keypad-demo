@@ -1,0 +1,15 @@
+.keyButton {
+  width: 90%;
+  height: 80%;
+  border-radius: 35px;
+}
+
+.keyTextSpan{
+  font-size: x-small;
+  font-weight: bold;
+}
+
+.keyNumberSpan{
+  font-size: xx-large;
+  font-weight: bolder;
+}

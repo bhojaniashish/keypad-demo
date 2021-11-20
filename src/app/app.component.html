@@ -1,0 +1,30 @@
+<div class="d-flex flex-row p-5">
+  <div class="col-sm-4">
+    <mat-grid-list style="height: 300px; width: 300px" cols="3" rows="4">
+      <mat-grid-tile *ngFor="let item of lstKeys">
+        <button (click)="keyClick(item)"
+          class="btn btn-secondary keyButton d-flex flex-column justify-content-center align-items-center">
+          <span class="keyTextSpan">{{item.text}}</span> <span class="keyNumberSpan">{{item.no}}</span>
+        </button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div class="col-sm-4 text-center">
+    <button class="btn btn-primary" (click)="clearKeyStrokeHistory()" [hidden]="lstKeyStrokeHistory.length <= 0" >Clear History</button>
+    <table class="table" *ngIf="lstKeyStrokeHistory.length > 0">
+      <thead>
+        <tr>
+          <th scope="col">Time</th>
+          <th scope="col">History</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of fetchKeyStrokeHistory()">
+          <td scope="col">{{item.time}}</td>
+          <td scope="col">User Clicks on {{item.no}}, the
+            coordinates are {{item.coordinate}}</td>
+          </tr>
+          </tbody>
+          </table>
+  </div>
+</div>
